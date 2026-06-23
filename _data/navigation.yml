@@ -1,3 +1,6 @@
+- name: Home
+  is_dropdown: false
+  link: /
 - name: Concept
   is_dropdown: false
   link: /#concept
