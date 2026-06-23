@@ -1,0 +1,167 @@
+#header-logo {
+    max-width: 400px;
+    max-height: 90px;
+}
+
+#navbar .navbar-nav {
+    font-family: 'Source Code Pro', monospace;
+}
+
+.navbar .container {
+    max-width: 960px;
+}
+
+.navbar .container p {
+    padding-left: 8px;
+    font-family: 'Source Code Pro', monospace;
+}
+
+.navbar-nav .current {
+    font-weight: bold;
+}
+
+.nav-item {
+    margin-right: auto;
+}
+
+.dropdown-toggle:after {
+    margin-left: -0.2rem;
+}
+
+.content {
+    font-size: 18px;
+    max-width: 960px;
+}
+
+.content .row {
+    margin-top: 15px;
+}
+
+.content h2 {
+    margin-top: 20px;
+    margin-left: -12px;
+}
+
+.row .col {
+    padding: 0;
+}
+
+.gh-logo i {
+    font-size: 1.0rem !important;
+}
+
+.h-line {
+    height: 1px;
+    width: 100%;
+    border-top: 1px solid #80808075;
+    margin: 20px 0;
+}
+
+.spacer {
+    margin-top: 50px;
+}
+
+.dot-separator {
+    font-weight: 900;
+}
+
+#homeKeyVisual {
+    width: 75%;
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+/* Footer styles */
+
+.footer .container {
+    max-width: 960px;
+}
+
+footer.bg-light {
+    color: rgb(46, 46, 46);
+}
+
+footer.bg-light a:link, footer.bg-light a:visited,
+footer.bg-light a:hover, footer.bg-light a:active {
+    color: rgb(46, 46, 46);
+    text-decoration: none;
+}
+
+footer.bg-light .text-muted {
+    color: #5f6163 !important
+}
+
+footer.bg-light .text-muted a:link,
+footer.bg-light .text-muted a:visited,
+footer.bg-light .text-muted a:hover,
+footer.bg-light .text-muted a:active {
+    color: #5f6163 !important;
+    text-decoration: none;
+}
+
+footer.bg-dark {
+    background-color: #1a2530 !important;
+    color: white;
+}
+
+footer.bg-dark a:link, footer.bg-dark a:visited,
+footer.bg-dark a:hover, footer.bg-dark a:active {
+    color: white;
+    text-decoration: none;
+}
+
+footer.bg-dark .text-muted {
+    color: #9ea1a4 !important
+}
+
+footer.bg-dark .text-muted a:link,
+footer.bg-dark .text-muted a:visited,
+footer.bg-dark .text-muted a:hover,
+footer.bg-dark .text-muted a:active {
+    color: #9ea1a4 !important;
+    text-decoration: none;
+}
+
+/* Multi-item carousel. Adapted from:
+https://gist.github.com/viniciusmachado106/c1fc350ef03a14a21a45235c80da5b9f */
+
+.multi-item-carousel .carousel-inner {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+}
+
+.multi-item-carousel .carousel-inner > .carousel-item {
+    flex: 0 0 33.333%;
+    display: none;
+    flex-wrap: nowrap;
+    overflow: visible;
+    transition: 500ms ease-in-out transform;
+    position: relative;
+}
+
+.multi-item-carousel .carousel-inner > .carousel-item.active {
+    display: flex;
+}
+
+.multi-item-carousel .carousel-inner > .carousel-item > .card {
+    flex: 0 0 calc(100% / 3);
+}
+
+.multi-item-carousel .carousel-inner .carousel-item.active.carousel-item-start {
+    transform: translateX(-33.333%);
+}
+
+.multi-item-carousel .carousel-inner .carousel-item.active.carousel-item-end {
+    transform: translateX(33.333%);
+}
+
+.multi-item-carousel .carousel-inner .carousel-item-next,
+.multi-item-carousel .carousel-inner .carousel-item-next.carousel-item-start {
+    transform: translateX(33.333%);
+}
+
+.multi-item-carousel .carousel-inner .carousel-item-prev,
+.multi-item-carousel .carousel-inner .carousel-item-prev.carousel-item-end {
+    transform: translateX(-33.333%);
+}

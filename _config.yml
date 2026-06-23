@@ -1,0 +1,31 @@
+title: Living Loads
+email: info@quasi-software.org
+description: >- # this means to ignore newlines until "baseurl:"
+  Information and contacts on the Living Loads project, part of the QuaSi project.
+baseurl: ""
+url: "https://living-loads.org"
+
+# Build settings
+theme: minima
+plugins:
+  - jekyll-feed
+
+# theme / style settings
+sass:
+  quiet_deps: true # silences warnings from dependencies such as the minima theme.
+                   # this is not ideal, but due to compatability constrains, we don't want
+                   # warnings on our code being swamped by warnings of code we can't change
+
+# Exclude from processing.
+# The following items will not be processed, by default.
+# Any item listed under the `exclude:` key here will be automatically added to
+# the internal "default list".
+#
+# Excluded items can be processed by explicitly listing the directories or
+# their entries' file path in the `include:` list.
+#
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - LICENSE.md

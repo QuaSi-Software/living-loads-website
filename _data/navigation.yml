@@ -1,0 +1,12 @@
+- name: Concept
+  is_dropdown: false
+  link: /#concept
+- name: Partners
+  is_dropdown: false
+  link: /#partners
+- name: Funding
+  is_dropdown: false
+  link: /#funding
+- name: Contact
+  is_dropdown: false
+  link: /#contact
