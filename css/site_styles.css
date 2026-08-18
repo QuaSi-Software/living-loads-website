@@ -42,6 +42,11 @@
     margin-left: -12px;
 }
 
+.content h3 {
+    margin-top: 20px;
+    margin-left: -12px;
+}
+
 .row .col {
     padding: 0;
 }
