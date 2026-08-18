@@ -86,12 +86,37 @@ is_home_page: true
 <h2 id="concept">Concept</h2>
 <div class="row">
     <div class="col">
-        <img src="{{'assets/concept_diagram.png' | absolute_url}}" style="width: 100%"/>
+        <img src="{{'assets/concept_diagram.svg' | absolute_url}}" style="width: 100%"/>
     </div>
 </div>
 <div class="row">
     <div class="col">
-        Explanation, lorem ipsum
+        <p>
+        At the center of Living Loads sits an AI model which generates profiles
+        based on input data about the building and its occupants. The inputs contain the
+        key information on the building type, living areas, household size, weather data and
+        the socio-demographic characteristics of the people living in the building. From
+        these inputs the model generates time series data for the plug loads, hot water demand, 
+        electric vehicle charging demands as well as intermediary profiles for the presence
+        and activity of the occupants. These outputs are optionally used in a follow-up
+        thermal building simulation in order to also determine heating and cooling demands
+        for the building.
+        </p>
+        <p>
+        The model is trained based on data generated with the open-source simulation tool
+        LoadProfileGenerator (LPG), which simulates the behaviour of people in the context of
+        energy-related activities at home. LPG has been in use for over a decade and can
+        produce high quality, realistic load profiles, however also requires detailed input
+        data and takes some time to calculate. The model is trained in such a way to reduce
+        the necessary input data to the key aspects and speed up simulation.
+        </p>
+        <p>
+        Whole district profiles are aggregated from the results of individual residential units,
+        taking the stochastic distribution of load peaks into account automatically, which
+        further increases the quality of results as this is a real effect. For Living Loads
+        the simulation model of LPG is also extended to include various options to model
+        small and medium enterprises, which co-inhabit the buildings along residential units.
+        </p>
     </div>
 </div>
 
