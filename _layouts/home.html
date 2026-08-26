@@ -15,53 +15,58 @@ is_home_page: true
         Living Loads is a joint project that develops realistic demand profiles for buildings
         and districts by combining artificial intelligence with behavioral simulation. The
         project aims to create web-based software solutions that represent user-dependent
-        energy demands - such as electricity, hot water, occupancy, and mobility - more
-        accurately than conventional standard load profiles, thereby improving the planning
-        and evaluation of energy systems.
+        energy demands more realistically. This includes electricity, hot water, occupancy 
+        and mobility, helping to improve the planning and evaluation of energy systems.
         </p>
         <p>
-        The project addresses a central practical problem: standard load profiles
-        insufficiently account for many relevant factors such as number of occupants,
-        weather conditions, or socio-demographic characteristics, leading to poorly
-        dimensioned energy systems. Living Loads solves this by developing AI models based
-        on the open-source <a href="https://www.loadprofilegenerator.de/">LoadProfileGenerator</a>
-        tool that convert complex usage patterns into practical parameters and enable
-        comprehensive coupling with thermal building simulation and statistical aggregation
-        to district load profiles.
+        The project addresses a central practical problem: user-dependent energy
+        demands are still often represented by standard load profiles. These profiles
+        are easy to use, but only represent the diversity of real buildings and their
+        occupants to a limited extent. Factors such as the number of occupants,
+        local weather, socio-demographic characteristics and, at district level, the
+        simultaneity of individual loads can have a major impact on actual demand.
+        At the same time, the way buildings are used continues to change, with more
+        diverse and flexible patterns of occupancy and energy use, making reliance
+        on a fixed set of standard profiles increasingly problematic. If these effects
+        are not represented adequately, energy systems may be over- or undersized.
         </p>
-    </div>
-</div>
-
-<div class="row spacer"></div>
-
-<div class="row">
-    <div class="col-lg-8" style="padding: 0;">
-        <p>
-        The idea behind Living Loads originates with the work on the overarching
-        <a href="https://quasi-software.org">software project QuaSi</a>. During development
-        of GenSim it became clear, that the commonly used load profiles for the presence of
-        people in a building and their electricity and hot water consumption, need to be
-        updated or, better yet, generated with realistic simulation tools.
-        <p>
-    </div>
-    <div class="col-lg-4" style="padding: 0;">
-        <a href="https://quasi-software.org">
-            <img src="{{'assets/logos/quasi_nobg.png' | absolute_url}}"  style="width: 100%"/>
-        </a>
     </div>
 </div>
 
 <div class="row">
     <div class="col">
         <p>
-        The software, AI models and training data that will be produced as part of Living
-        Loads will be published as open-source under the umbrella of QuaSi Software and there
-        is a large overlap between the developers and organisations working on both projects.
-        Feel free to check out the other available tools and documentation!
-        <p>
+            The idea behind Living Loads grew out of practical planning experience,
+            previous research projects and the work on the overarching
+            <a href="https://quasi-software.org">software project QuaSi</a>, especially
+            during the development of GenSim. These experiences showed the need for
+            a method that combines the realism of detailed behavioural simulation with
+            the simplicity required in planning practice. AI models trained on simulations
+            with the open-source
+            <a href="https://www.loadprofilegenerator.de/">LoadProfileGenerator</a>
+            translate complex usage patterns into a small set of practical input parameters,
+            without requiring a detailed behavioural simulation for every planning task.
+        </p>
     </div>
 </div>
 
+<div class="row align-items-center">
+    <div class="col-lg-8" style="padding: 0;">
+        <p>
+        The software, AI models and training data that will be produced as part of Living
+        Loads will be published as open-source under the umbrella of QuaSi Software. There
+        is a large overlap between the developers and organisations working on both projects.
+        Feel free to check out the other available tools and documentation!
+        </p>
+    </div>
+    <div class="col-lg-4" style="padding-left: 1rem;">
+        <a href="https://quasi-software.org">
+            <img src="{{'assets/logos/quasi_nobg.png' | absolute_url}}"
+                 style="width: 100%"
+                 alt="QuaSi Software"/>
+        </a>
+    </div>
+</div>
 <div class="row spacer"></div>
 
 <h3>News</h3>
@@ -97,31 +102,45 @@ is_home_page: true
 <div class="row">
     <div class="col">
         <p>
-        At the center of Living Loads sits an AI model which generates profiles
-        based on input data about the building and its occupants. The inputs contain the
-        key information on the building type, living areas, household size, weather data and
-        the socio-demographic characteristics of the people living in the building. From
-        these inputs the model generates time series data for the plug loads, hot water demand, 
-        electric vehicle charging demands as well as intermediary profiles for the presence
-        and activity of the occupants. These outputs are optionally used in a follow-up
+        Living Loads bridges the gap between detailed behavioral simulation and the
+        simple input required in planning practice. At its center is an AI model that
+        uses a small set of key information about buildings and their occupants,
+        including building type, floor area, household size, local weather and
+        socio-demographic characteristics.
+        </p>
+
+        <p>
+        From these inputs, the model generates time series for plug loads, domestic
+        hot water and electric vehicle charging, as well as profiles for the presence
+        and activity of occupants. Presence, activity and plug loads can then be used
+        as internal loads in a
         <a href="https://quasi-software.readthedocs.io/en/latest/gensim_overview/">thermal building simulation</a>
-        in order to also determine heating and cooling demands for the building.
+        to determine heating and cooling demand. In this way, user behavior and
+        building physics are brought together in one consistent demand model.
         </p>
+
         <p>
-        The model is trained based on data generated with the open-source simulation tool
+        The AI model is trained on data generated with the open-source simulation tool
         <a href="https://www.loadprofilegenerator.de/">LoadProfileGenerator (LPG)</a>,
-        which simulates the behaviour of people in the context of
-        energy-related activities at home. LPG has been in use for over a decade and can
-        produce high quality, realistic load profiles, however also requires detailed input
-        data and takes some time to calculate. The model is trained in such a way to reduce
-        the necessary input data to the key aspects and speed up simulation.
+        which simulates people's energy-related activities at household level.
+        LPG has been in use for over a decade and can produce high-quality, realistic
+        load profiles. As part of Living Loads, the underlying simulation data basis
+        of the LPG will be further developed and updated to better reflect current occupant
+        characteristics and changing patterns of residential use. At the same time, detailed
+        behavioral simulations require extensive input data and computational effort.
+        By training the AI model on systematically generated LPG simulations, Living Loads
+        reduces these complex inputs to a small set of key parameters, making realistic
+        demand profiles much easier and faster to generate.
         </p>
+
         <p>
-        Whole district profiles are aggregated from the results of individual residential units,
-        taking the stochastic distribution of load peaks into account automatically, which
-        further increases the quality of results as this is a real effect. For Living Loads
-        the simulation model of LPG is also extended to include various options to model
-        small and medium enterprises, which co-inhabit the buildings along residential units.
+        Whole-district profiles are aggregated from individual units so that the
+        stochastic spread and simultaneity of loads are retained. This is particularly
+        important at district level, where coincident loads determine the resulting
+        peak demand and therefore influence the dimensioning of energy systems.
+        Beyond residential use, Living Loads will also extend the LPG to represent small
+        businesses from trade, commerce and services. This enables mixed-use buildings
+        and districts to be represented within the same modeling approach.       
         </p>
     </div>
 </div>
@@ -187,6 +206,7 @@ is_home_page: true
 
 <div class="row">
     <div class="col" style="padding: 0;">
+        <p><strong>Associated Partners</strong></p>
         <img src="{{'assets/partners_overview.png' | absolute_url}}" style="width: 100%;"/>
     </div>
 </div>
