@@ -37,12 +37,7 @@
     margin-top: 15px;
 }
 
-.content h2 {
-    margin-top: 20px;
-    margin-left: -12px;
-}
-
-.content h3 {
+.content h2, .content h3, .content h4, .content h5 {
     margin-top: 20px;
     margin-left: -12px;
 }
