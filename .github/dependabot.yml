@@ -1,0 +1,24 @@
+version: 2
+
+updates:
+  # Keeps the actions used by the deployment workflow up to date, including the commit SHA
+  # and the version comment of the pinned third-party action.
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+    groups:
+      github-actions:
+        patterns:
+          - "*"
+
+  # Keeps Jekyll and its plugins up to date. Every update is validated by the build job of
+  # the deployment workflow before it can be merged.
+  - package-ecosystem: bundler
+    directory: /
+    schedule:
+      interval: monthly
+    groups:
+      jekyll:
+        patterns:
+          - "*"
