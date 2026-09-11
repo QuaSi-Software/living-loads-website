@@ -32,12 +32,12 @@ Note that `Gemfile.lock` must list the platform `x86_64-linux` in its `PLATFORMS
 The website is hosted on GitHub Pages and published by the workflow `.github/workflows/deploy-pages.yml`. Before the workflow is run for the first time, the publishing source in the repository settings under *Pages* must be set to *GitHub Actions*, not to a branch, because the site uses Jekyll 4 while the built-in Pages build only supports Jekyll 3. As long as this has not been done, the workflow fails in the step *Configure GitHub Pages*.
 
 ### Custom domain
-The site is served under the custom domain `living-loads.org`, with `www.living-loads.org` redirecting to it. The setup requires the following:
+The site is served under the custom domain `livingloads.org`, with `www.livingloads.org` redirecting to it. The setup requires the following:
 
-1. DNS records for the apex domain `living-loads.org`:
+1. DNS records for the apex domain `livingloads.org`:
     * `A` records pointing to `185.199.108.153`, `185.199.109.153`, `185.199.110.153` and `185.199.111.153`
     * `AAAA` records pointing to `2606:50c0:8000::153`, `2606:50c0:8001::153`, `2606:50c0:8002::153` and `2606:50c0:8003::153`
-1. A `CNAME` record for `www.living-loads.org` pointing to `quasi-software.github.io.`
+1. A `CNAME` record for `www.livingloads.org` pointing to `quasi-software.github.io.`
 1. If the DNS zone contains `CAA` records, they must allow `letsencrypt.org` to issue certificates. Without any `CAA` records nothing needs to be done.
 1. The file `CNAME` in the repository root, containing the domain, which Jekyll copies to the generated site.
 1. The domain entered under *Settings → Pages → Custom domain*. GitHub then checks the DNS setup and automatically requests a free Let's Encrypt certificate covering both the apex and the `www` subdomain. Once the certificate has been issued, which can take up to 24 hours, the option *Enforce HTTPS* must be activated. Renewal of the certificate is handled automatically.
