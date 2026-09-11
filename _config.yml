@@ -3,7 +3,7 @@ email: info@quasi-software.org
 description: >- # this means to ignore newlines until "baseurl:"
   Information and contacts on the Living Loads project, part of the QuaSi project.
 baseurl: ""
-url: "https://living-loads.org"
+url: "https://livingloads.org"
 
 # Build settings
 theme: minima

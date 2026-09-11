@@ -7,27 +7,27 @@
         <meta name="author" content="" />
         <title>Living Loads - Realistic load profiles for buildings and districts</title>
         <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="{{'assets/favicon.png' | absolute_url}}" />
+        <link rel="icon" type="image/x-icon" href="{{'assets/favicon.png' | relative_url}}" />
         <!-- Bootstrap icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" type="text/css" />
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="{{'css/styles.css' | absolute_url}}" rel="stylesheet" />
+        <link href="{{'css/styles.css' | relative_url}}" rel="stylesheet" />
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400&display=swap" rel="stylesheet">
         <!-- Custom CSS -->
-        <link href="{{'css/site_styles.css' | absolute_url}}" rel="stylesheet" />
+        <link href="{{'css/site_styles.css' | relative_url}}" rel="stylesheet" />
     </head>
     <body>
         <!-- Navigation-->
         <nav class="navbar navbar-expand-md navbar-light bg-light static-top">
             <div class="container d-inline-flex flex-column">
                 <p>
-                    <a href="{{'' | absolute_url}}">
-                        <img id="header-logo" src="{{'assets/logos/lilo.svg' | absolute_url}}" style="width: 350px;"/>
+                    <a href="{{'/' | relative_url}}">
+                        <img id="header-logo" src="{{'assets/logos/lilo.svg' | relative_url}}" style="width: 350px;"/>
                     </a>
                 </p>
 
@@ -51,7 +51,7 @@
 
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown{{item.name}}">
                                     {% for subitem in item.items %}
-                                    <li class="dropdown-item"><a href="{{subitem.link | absolute_url}}">
+                                    <li class="dropdown-item"><a href="{{subitem.link | relative_url}}">
                                         {{subitem.display_name}}
                                     </a></li>
                                     {% endfor %}
@@ -59,7 +59,7 @@
                             </li>
                             {% else %}
                             <li class="nav-item {% if page.url == item.link %}current{% endif %}">
-                                <a class="nav-link" href="{{item.link | absolute_url}}">{{item.name}}</a>
+                                <a class="nav-link" href="{{item.link | relative_url}}">{{item.name}}</a>
                             </li>
                             {% endif %}
                         {% endfor %}
@@ -79,9 +79,9 @@
                 <div class="row">
                     <div class="col-lg-12 h-100 text-center my-auto">
                         <ul class="list-inline mb-2">
-                            <li class="list-inline-item"><a href="{{'/imprint' | absolute_url}}">Imprint</a></li>
+                            <li class="list-inline-item"><a href="{{'/imprint' | relative_url}}">Imprint</a></li>
                             <li class="list-inline-item dot-separator">⋅</li>
-                            <li class="list-inline-item"><a href="{{'/#contact' | absolute_url}}">Contact</a></li>
+                            <li class="list-inline-item"><a href="{{'/#contact' | relative_url}}">Contact</a></li>
                             <li class="list-inline-item dot-separator">⋅</li>
                             <li class="list-inline-item gh-logo">
                                 <a href="https://github.com/QuaSi-Software/living-loads-website"><i class="bi-github fs-3"></i></a>
@@ -100,6 +100,6 @@
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Custom JS-->
-        <script src="{{'js/scripts.js' | absolute_url}}"></script>
+        <script src="{{'js/scripts.js' | relative_url}}"></script>
     </body>
 </html>
