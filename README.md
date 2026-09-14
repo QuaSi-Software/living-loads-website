@@ -39,10 +39,13 @@ The site is served under the custom domain `livingloads.org`, with `www.livinglo
     * `AAAA` records pointing to `2606:50c0:8000::153`, `2606:50c0:8001::153`, `2606:50c0:8002::153` and `2606:50c0:8003::153`
 1. A `CNAME` record for `www.livingloads.org` pointing to `quasi-software.github.io.`
 1. If the DNS zone contains `CAA` records, they must allow `letsencrypt.org` to issue certificates. Without any `CAA` records nothing needs to be done.
-1. The file `CNAME` in the repository root, containing the domain, which Jekyll copies to the generated site.
 1. The domain entered under *Settings → Pages → Custom domain*. GitHub then checks the DNS setup and automatically requests a free Let's Encrypt certificate covering both the apex and the `www` subdomain. Once the certificate has been issued, which can take up to 24 hours, the option *Enforce HTTPS* must be activated. Renewal of the certificate is handled automatically.
 
-Note that no proxy or CDN, such as Cloudflare with proxying enabled, may be placed in front of GitHub Pages while the certificate is being issued, as this prevents the domain validation from succeeding.
+As the site is published by a workflow and not from a branch, a `CNAME` file in the repository is not required. The domain is taken from the Pages configuration of the repository.
+
+**After the custom domain is added, changed or removed, the workflow must be run again.** The step *Configure GitHub Pages* reads the base path from the address the site is currently published under and hands it to Jekyll via `--baseurl`. A site built before the domain was added therefore still contains the path prefix `/living-loads-website` in all internal links and assets, which do not resolve under the custom domain. Re-running the workflow rebuilds the site with an empty base path and fixes this.
+
+Note that no proxy or CDN, such as Cloudflare with proxying enabled, may be placed in front of GitHub Pages while the certificate is being issued, as this prevents the domain validation from succeeding. If the certificate is not issued long after the DNS records have propagated, removing the domain in the settings and immediately entering it again triggers a new attempt.
 
 ## License
 The website is based on the theme [Landing Page of Start Bootstrap](https://github.com/StartBootstrap/startbootstrap-landing-page), which is released under MIT license. The Living Loads website in this repository is also released under MIT license, with specific exceptions. Please note that this does not automatically extend to all linked content by the website. Only content released as part of the repository is covered by the license. For more details, sources of some assets and the full license text, please see file `LICENSE.md`.
