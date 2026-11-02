@@ -30,7 +30,7 @@ jobs:
       - name: Setup Ruby
         # Third-party action, pinned to a commit SHA for supply chain safety. The version
         # comment is kept up to date by Dependabot, see .github/dependabot.yml
-        uses: ruby/setup-ruby@14594264cd68ce8a2345dd349bc3d138a4ef85c8 # v1.327.0
+        uses: ruby/setup-ruby@7f797815d8adceb1c412e7abefdd1ab4abc47a5f # v1.335.0
         with:
           ruby-version: '3.4'
           bundler-cache: true
