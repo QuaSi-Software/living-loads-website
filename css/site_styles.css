@@ -69,6 +69,10 @@
     margin: 0 !important;
 }
 
+.justify-text {
+    text-align: justify;
+}
+
 #key-visual-switcher {
     width: 140px;
     text-align: right;
