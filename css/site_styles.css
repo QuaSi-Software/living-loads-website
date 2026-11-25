@@ -65,6 +65,25 @@
     font-weight: 900;
 }
 
+.no-margin {
+    margin: 0 !important;
+}
+
+.justify-text {
+    text-align: justify;
+}
+
+#key-visual-switcher {
+    width: 140px;
+    text-align: right;
+    cursor: pointer;
+}
+
+.icon-moon, .icon-sun {
+    width: 30px;
+    height: 30px;
+}
+
 /* Footer styles */
 
 .footer .container {
